@@ -2,6 +2,8 @@ namespace ShapeTracker.Models
 {
   public class Triangle
   {
-  // Code for Triangle business logic will go here.
+    public int Side1;
+    public int Side2 = 4;
+    public int Side3;
   }
 }
