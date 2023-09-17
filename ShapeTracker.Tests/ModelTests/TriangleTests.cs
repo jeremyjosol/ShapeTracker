@@ -9,7 +9,7 @@ namespace ShapeTracker.Tests
     [TestMethod]
     public void TriangleConstructor_CreatesInstanceOfTriangle_Triangle()
     {
-      Triangle newTriangle = new Triangle();
+      Triangle newTriangle = new Triangle(2);
       Assert.AreEqual(typeof(Triangle), newTriangle.GetType());
     }
 
