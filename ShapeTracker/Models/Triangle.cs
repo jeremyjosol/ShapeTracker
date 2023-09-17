@@ -28,7 +28,18 @@ namespace ShapeTracker.Models
     }
     public string CheckType()
     {
-      return "Not a triangle";
+      if ((Side1 > (Side2 + _side3)) || (Side2 > (Side1 + _side3)) || (_side3 > (Side1 + Side2))) 
+      {
+        return "Not a triangle";
+      }
+      else if ((Side1 != Side2) && ((Side1 != _side3)) && ((Side2 != _side3)))
+      {
+        return "Scalene triangle";
+      }
+      else
+      {
+        return "";
+      }
     }
   }
 }
