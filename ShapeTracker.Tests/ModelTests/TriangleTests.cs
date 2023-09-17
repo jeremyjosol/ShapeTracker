@@ -98,5 +98,16 @@ namespace ShapeTracker.Tests
       string triType = equiTri.CheckType();
       Assert.AreEqual("Equilateral triangle", triType);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsAllTriangleInstances_List()
+    {
+      Triangle tri1 = new Triangle(2, 2, 9);
+      Triangle tri2 = new Triangle(21, 3, 9);
+      Triangle tri3 = new Triangle(1, 3, 9);
+      List<Triangle> expected = new List<Triangle> { tri1, tri2, tri3};
+      List<Triangle> actualResult = TriangleConstructor_CreatesInstanceOfTriangle_Triangle.GetAll();
+      CollectionAssert.AreEqual(expected, actualResult);
+    }
   }
 }
