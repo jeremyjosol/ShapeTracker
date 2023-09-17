@@ -72,7 +72,7 @@ namespace ShapeTracker.Tests
     {
       Triangle notATriangle = new Triangle(3, 4, 88);
       string triType = notATriangle.CheckType();
-      Assert.AreEqual("not a triangle", triType);
+      Assert.AreEqual("Not a triangle", triType);
     }
   }
 }
