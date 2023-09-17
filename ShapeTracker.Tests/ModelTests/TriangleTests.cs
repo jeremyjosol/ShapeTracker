@@ -1,11 +1,17 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ShapeTracker.Models;
+using System.Collections.Generic;
+using System;
 
 namespace ShapeTracker.Tests
 {
   [TestClass]
-  public class TriangleTests
+  public class TriangleTests : IDisposable
   {
+    public void Dispose()
+    {
+      Triangle.ClearAll();
+    }
     [TestMethod]
     public void TriangleConstructor_CreatesInstanceOfTriangle_Triangle()
     {
@@ -105,8 +111,8 @@ namespace ShapeTracker.Tests
       Triangle tri1 = new Triangle(2, 2, 9);
       Triangle tri2 = new Triangle(21, 3, 9);
       Triangle tri3 = new Triangle(1, 3, 9);
-      List<Triangle> expected = new List<Triangle> { tri1, tri2, tri3};
-      List<Triangle> actualResult = TriangleConstructor_CreatesInstanceOfTriangle_Triangle.GetAll();
+      List<Triangle> expected = new List<Triangle> { tri1, tri2, tri3 };
+      List<Triangle> actualResult = Triangle.GetAll();
       CollectionAssert.AreEqual(expected, actualResult);
     }
   }
